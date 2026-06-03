@@ -1,0 +1,21 @@
+location:
+  name: Chennai
+  latitude: 13.0827
+  longitude: 80.2707
+  timezone: Asia/Kolkata
+
+fetch:
+  days_back: 7
+  hourly_variables:
+    - temperature_2m
+    - apparent_temperature
+    - relative_humidity_2m
+    - windspeed_10m
+    - precipitation
+    - weathercode
+
+bigquery:
+  project_id: civil-glyph-487713-t5
+  dataset_id: weather_pipeline
+  table_id: chennai_hourly_weather
+  dedup_key: timestamp_utc

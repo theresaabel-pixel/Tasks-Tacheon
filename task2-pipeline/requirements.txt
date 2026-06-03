@@ -1,0 +1,6 @@
+requests
+pyyaml
+pandas
+google-cloud-bigquery
+google-cloud-bigquery-storage
+pyarrow
