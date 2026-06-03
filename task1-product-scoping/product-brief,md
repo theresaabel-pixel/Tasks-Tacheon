@@ -1,0 +1,141 @@
+# Marketing Performance Dashboard — Product Brief (v1)
+
+---
+
+## 1. Problem Statement
+
+Marketing performance questions are currently answered through a manual and fragmented process. Data is extracted from multiple platforms, combined manually, and interpreted individually. This leads to:
+
+- Delayed responses to performance queries  
+- Inconsistent reporting across analysts  
+- Dependency on specific individuals  
+- Lack of scalability in answering recurring questions  
+
+The objective of this product is to eliminate manual effort and provide a consistent, reliable view of marketing performance.
+
+---
+
+## 2. Primary User (v1)
+
+The primary user is the internal marketing analyst.
+
+This version is not designed for external clients. The initial focus is strictly internal usage to ensure correctness, usability, and trust in the system before expanding to external stakeholders.
+
+---
+
+## 3. Core Question Addressed
+
+The system is designed to answer the following question:
+
+Which marketing channels are underperforming against their defined targets, and by what magnitude?
+
+The emphasis is on deviation from expected performance rather than general reporting.
+
+---
+
+## 4. Product Scope (v1)
+
+The v1 dashboard will function as an internal performance monitoring tool that:
+
+- Aggregates data from key marketing sources (initially paid advertising and web analytics)
+- Displays core performance metrics by channel, including:
+  - Spend
+  - Clicks
+  - Conversions
+  - Cost per conversion
+- Compares each metric against predefined targets or benchmarks
+- Clearly identifies underperforming or overperforming channels
+- Refreshes data on a scheduled basis (minimum daily updates)
+
+The primary outcome is to allow an analyst to immediately identify performance issues without manual data preparation.
+
+---
+
+## 5. Trust and Data Transparency Requirements
+
+Trust is a critical requirement for adoption. The system must ensure:
+
+- Visibility of data sources for every metric
+- Clear timestamp indicating last data refresh
+- Transparent definitions for all calculated metrics
+- No opaque or hidden aggregations
+- Explicitly defined and user-owned target values
+
+The system must be auditable such that outputs can be verified against raw data sources.
+
+---
+
+## 6. Data Sources (v1)
+
+| Source | Data Provided | Ingestion Method |
+|--------|--------------|------------------|
+| Google Ads / Meta Ads | Spend, clicks, conversions, CPC | API integration or scheduled export |
+| Google Analytics | Sessions, bounce rate, goal completions | API integration or scheduled export |
+
+Existing tools and workflows remain unchanged. The system integrates with them without requiring replacement.
+
+---
+
+## 7. Out of Scope for v1
+
+The following are explicitly excluded from the initial version:
+
+- Client-facing dashboards (separate requirements and access control needs)
+- AI-generated recommendations or automated decision-making
+- Attribution modeling across channels
+- Email, SEO, and organic channel integration
+- Automated alerts or notifications
+- Historical trend analysis beyond basic current-state comparison
+
+The v1 focus is limited to current performance against targets.
+
+---
+
+## 8. System Requirements
+
+The system requires the following components:
+
+### 8.1 Data Pipeline
+A scheduled mechanism to extract and load data from advertising and analytics platforms.
+
+### 8.2 Target Management Layer
+A simple mechanism (e.g., spreadsheet or configuration table) to define performance targets per channel and metric.
+
+### 8.3 Presentation Layer
+A dashboard interface (existing BI tool or lightweight internal web application) that presents:
+
+- Current performance metrics
+- Target comparisons
+- Highlighted deviations
+
+### 8.4 Ownership Model
+A designated owner responsible for:
+
+- Maintaining data integrations
+- Updating target definitions
+- Monitoring data accuracy and system reliability
+
+---
+
+## 9. Assumptions
+
+The following assumptions are made for v1:
+
+- Primary data sources are Google Ads and Google Analytics
+- Target values are manually defined and maintained
+- The system does not require predictive or AI-driven functionality in v1
+- Existing organizational tools may be leveraged for dashboard implementation
+
+---
+
+## 10. Future Considerations (Post v1)
+
+The following enhancements may be considered in later versions:
+
+- Inclusion of additional marketing channels (SEO, email, organic)
+- Time-series and trend analysis
+- Automated alerts for performance deviations
+- AI-assisted insights and recommendations
+- Client-facing reporting interface
+
+These are intentionally deferred to ensure v1 remains focused, stable, and reliable.
